@@ -9,7 +9,7 @@ export default function Landing() {
       <header className="App-header">
         <img src={logoems} className="App-logo" alt="logo" />
         <p>
-          <b>EMS</b> Mining Market solution on your Business
+          EMS Mining Market solution on your Business
         </p>
         <a
           className="App-link"
