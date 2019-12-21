@@ -15,11 +15,13 @@
     "chart.js": "^2.9.3",
     "cleave.js": "^1.5.3",
     "date-fn": "0.0.2",
+    "firebase": "^7.6.1",
     "leaflet": "^1.6.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.0"
+    "react-scripts": "3.3.0",
+    "socket.io-client": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
