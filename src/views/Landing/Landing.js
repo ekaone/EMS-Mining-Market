@@ -19,7 +19,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="primary" align="center">
       {'Copyright © '}
-      <Link target="_blank" color="inherit" href="https://adiraja-integrasi.com/">
+      <Link color="inherit" href="/">
         EMS Adiraja Integrasi
       </Link>{' '}
       {new Date().getFullYear()}
@@ -63,12 +63,12 @@ export default function Landing() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button onClick={() => goSignView('signup')} variant="contained" color="secondary">
+                  <Button onClick={() => goSignView('signup')} variant="contained" color="primary">
                     Sign Up
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button onClick={() => goSignView('signin')} variant="outlined" color="secondary">
+                  <Button onClick={() => goSignView('signin')} variant="outlined" color="primary">
                     Sign In
                   </Button>
                 </Grid>
@@ -108,8 +108,8 @@ export default function Landing() {
       </main>
       {/* Footer */}
       <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          EMS Paramitra consulting company
+        <Typography variant="h6" align="center" color="textSecondary" gutterBottom>
+          <b>EMS</b> Paramitra consulting company
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
           Technology only lives a short life, but commitment and trust will last as long as we do the right thing to foster them

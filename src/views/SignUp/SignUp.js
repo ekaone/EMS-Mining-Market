@@ -19,7 +19,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="primary" align="center">
       {'Copyright © '}
-      <Link target="_blank" color="inherit" href="https://adiraja-integrasi.com/">
+      <Link color="inherit" href="/">
         EMS Adiraja Integrasi
       </Link>{' '}
       {new Date().getFullYear()}
@@ -58,7 +58,7 @@ export default function SignUp() {
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography component="h1" variant="h5" color="textSecondary">
           Sign up
         </Typography>
         <form className={classes.form} noValidate>
