@@ -51,30 +51,32 @@ const useStyles = makeStyles(theme => ({
 
 export default function SignUp() {
   const classes = useStyles();
-  const [fakers, setFakers] = useState({
-    fakerFirstName: '',
-    fakerLastName: '',
-    fakerEmail: '',
-    fakerPassword: '',
-  })
-  const [counterSubmit, setCounterSubmit] = useState(0)
   const fakerData = {
-    fakerFirstName: faker.name.firstName(),
-    fakerLastName: faker.name.lastName(),
-    fakerEmail: faker.internet.email(),
-    fakerPassword: 'a'
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: faker.internet.email(),
+    password: 'a'
   }
-  
-  const handleFaker = () => {
-    setFakers(fakerData)
+  const [values, setValues] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: ''
+  })
+ 
+  const handleFaker = (e) => {
+    setValues(fakerData)
+  }
+
+  const handleChange = (e) => {
+    const name = e.target.name
+    setValues({ ...values, [name]: e.target.value })
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setCounterSubmit(ps => ps + 1)
+    console.log(values)
   }
-
-  console.log(fakers)
 
   return (
     <>
@@ -99,7 +101,8 @@ export default function SignUp() {
                   id="firstName"
                   label="First Name"
                   autoFocus
-                  value={fakers.fakerFirstName}
+                  value={values.firstName}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -111,7 +114,8 @@ export default function SignUp() {
                   label="Last Name"
                   name="lastName"
                   autoComplete="lname"
-                  value={fakers.fakerLastName}
+                  value={values.lastName}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -123,7 +127,8 @@ export default function SignUp() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
-                  value={fakers.fakerEmail}
+                  value={values.email}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -136,7 +141,8 @@ export default function SignUp() {
                   type="password"
                   id="password"
                   autoComplete="current-password"
-                  value={fakers.fakerPassword}
+                  value={values.password}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
