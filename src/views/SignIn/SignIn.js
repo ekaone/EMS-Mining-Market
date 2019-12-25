@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link as RLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -7,7 +7,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
@@ -19,7 +18,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="primary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="/">
+      <Link to="/" style={{ textDecoration: 'none', color: '#3f51b5' }}>
         EMS Adiraja Integrasi
       </Link>{' '}
       {new Date().getFullYear()}
@@ -99,14 +98,14 @@ export default function SignIn() {
           </Button>
           <Grid container>
             <Grid item xs>
-              <RLink style={{ textDecoration: 'none' }} to="/forgotpassword" variant="body2">
+              <Link style={{ textDecoration: 'none', color: '#3f51b5' }} to="/forgotpassword" variant="body2">
                 Forgot password?
-              </RLink>
+              </Link>
             </Grid>
             <Grid item>
-              <RLink style={{ textDecoration: 'none' }} to="/signup" variant="body2">
+              <Link style={{ textDecoration: 'none', color: '#3f51b5' }} to="/signup" variant="body2">
                 {"Don't have an account? Sign Up"}
-              </RLink>
+              </Link>
             </Grid>
           </Grid>
         </form>

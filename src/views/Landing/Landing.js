@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
@@ -10,7 +10,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import { useStyles } from './useStyles'
 import { cards } from './variables'
@@ -19,7 +18,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="primary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="/">
+      <Link to="/" style={{ textDecoration: 'none', color: '#3f51b5' }}>
         EMS Adiraja Integrasi
       </Link>{' '}
       {new Date().getFullYear()}
@@ -30,19 +29,9 @@ function Copyright() {
 
 export default function Landing() {
   const classes = useStyles();
-  const history = useHistory()
 
   const goPage = (path) => {
     window.open(path); 
-  }
-
-  const goSignView = (view) => {
-    if(view === 'signin') {
-      history.push("/signin")
-    }
-    if(view === 'signup') {
-      history.push("/signup")
-    }
   }
 
   return (
@@ -63,12 +52,12 @@ export default function Landing() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button onClick={() => goSignView('signup')} variant="contained" color="primary">
+                  <Button component={Link} to="/signup" variant="contained" color="primary">
                     Sign Up
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button onClick={() => goSignView('signin')} variant="outlined" color="primary">
+                  <Button component={Link} to="/signin" variant="outlined" color="primary">
                     Sign In
                   </Button>
                 </Grid>
