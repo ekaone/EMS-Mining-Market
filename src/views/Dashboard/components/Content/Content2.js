@@ -36,7 +36,7 @@ const styles = theme => ({
   },
 });
 
-function Content(props) {
+function Content2(props) {
   const { classes } = props;
 
   return (
@@ -50,7 +50,7 @@ function Content(props) {
             <Grid item xs>
               <TextField
                 fullWidth
-                placeholder="Search by room number, level, or UID"
+                placeholder="Search by Content2"
                 InputProps={{
                   disableUnderline: true,
                   className: classes.searchInput,
@@ -59,7 +59,7 @@ function Content(props) {
             </Grid>
             <Grid item>
               <Button variant="contained" color="primary" className={classes.addUser}>
-                Add Room
+                Add Content2
               </Button>
               <Tooltip title="Reload">
                 <IconButton>
@@ -72,15 +72,12 @@ function Content(props) {
       </AppBar>
       <div className={classes.contentWrapper}>
         <Typography color="textSecondary" align="center">
-          No Rooms for this setting yet
+          Context 2
         </Typography>
       </div>
     </Paper>
   );
 }
 
-Content.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
-export default withStyles(styles)(Content);
+export default withStyles(styles)(Content2);

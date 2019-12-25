@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 // libs
-import faker from 'faker'
 import { dbSave } from './func/firebase'
+import { fakeSignUp } from '../../utils/Faker/Faker'
 // @material-ui/core
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -52,12 +52,12 @@ const useStyles = makeStyles(theme => ({
 
 export default function SignUp() {
   const classes = useStyles();
-  const fakerData = {
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
-    email: faker.internet.email(),
-    password: 'a'
-  }
+  // const fakerData = {
+  //   firstName: faker.name.firstName(),
+  //   lastName: faker.name.lastName(),
+  //   email: faker.internet.email(),
+  //   password: 'a'
+  // }
   const [values, setValues] = useState({
     firstName: '',
     lastName: '',
@@ -66,7 +66,7 @@ export default function SignUp() {
   })
  
   const handleFaker = (e) => {
-    setValues(fakerData)
+    setValues(fakeSignUp)
   }
 
   const handleChange = (e) => {
