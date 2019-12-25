@@ -1,1 +1,1 @@
-// export { default as LatestProducts } from './LatestProducts';
+export { default } from './Dashboard'

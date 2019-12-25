@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
-
+// libs
 import faker from 'faker'
-
+import { dbSave } from './func/firebase'
+// @material-ui/core
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -75,7 +76,8 @@ export default function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(values)
+    // console.log(values)
+    dbSave(values)
   }
 
   return (
