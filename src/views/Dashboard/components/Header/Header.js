@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import JohnDow from '../../../../assets/johnDow.jpg'
 
@@ -96,12 +96,12 @@ function Header(props) {
           <Grid container alignItems="center" spacing={1}>
             <Grid item xs>
               <Typography color="inherit" variant="h5" component="h1">
-                Rooms
+                Labour
               </Typography>
             </Grid>
             <Grid item>
               <Button className={classes.button} variant="outlined" color="inherit" size="small">
-                Rooms setup
+                setup
               </Button>
             </Grid>
             <Grid item>

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 
 import { createMuiTheme, ThemeProvider, withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
 
 import Navigator from '../Navigator/Navigator';
 import Content from '../Content/Content';
@@ -17,8 +17,8 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="primary" href="">
-        Motel System
+      <Link to="/" style={{ textDecoration: 'none', color: '#3f51b5' }}>
+        EMS Adiraja Integrasi
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}

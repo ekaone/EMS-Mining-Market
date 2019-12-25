@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 
 import clsx from 'clsx';
@@ -23,18 +24,18 @@ import PhonelinkSetupIcon from '@material-ui/icons/PhonelinkSetup';
 
 const categories = [
   {
-    id: 'Rooms',
+    id: 'Task',
     children: [
-      { id: 'Labor', icon: <PeopleIcon />, active: true },
+      { id: 'Labour', icon: <PeopleIcon />, active: true },
       { id: 'Inspection', icon: <DnsRoundedIcon /> },
       { id: 'Storage', icon: <PermMediaOutlinedIcon /> },
-      { id: 'Location', icon: <PublicIcon />, active: true },
+      { id: 'Location', icon: <PublicIcon />, },
       { id: 'Functions', icon: <SettingsEthernetIcon /> },
       { id: 'Vehicle', icon: <SettingsInputComponentIcon /> },
     ],
   },
   {
-    id: 'Kitchen',
+    id: 'Quality',
     children: [
       { id: 'Analytics', icon: <SettingsIcon /> },
       { id: 'Performance', icon: <TimerIcon /> },
@@ -91,7 +92,7 @@ function Navigator(props) {
     <Drawer variant="permanent" {...other}>
       <List disablePadding>
         <ListItem className={clsx(classes.firebase, classes.item, classes.itemCategory)}>
-          BD Motels
+          Mine Market
         </ListItem>
         <ListItem className={clsx(classes.item, classes.itemCategory)}>
           <ListItemIcon className={classes.itemIcon}>
@@ -102,7 +103,7 @@ function Navigator(props) {
               primary: classes.itemPrimary,
             }}
           >
-            Motels
+            <Link to="/" style={{ textDecoration: 'none', color: '#fff' }}>Home</Link>
           </ListItemText>
         </ListItem>
         {categories.map(({ id, children }) => (

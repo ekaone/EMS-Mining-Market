@@ -50,7 +50,7 @@ function Content(props) {
             <Grid item xs>
               <TextField
                 fullWidth
-                placeholder="Search by room number, level, or UID"
+                placeholder="Search by WO number, level, or UID"
                 InputProps={{
                   disableUnderline: true,
                   className: classes.searchInput,
@@ -59,7 +59,7 @@ function Content(props) {
             </Grid>
             <Grid item>
               <Button variant="contained" color="primary" className={classes.addUser}>
-                Add Room
+                Add Work Order
               </Button>
               <Tooltip title="Reload">
                 <IconButton>
@@ -72,7 +72,7 @@ function Content(props) {
       </AppBar>
       <div className={classes.contentWrapper}>
         <Typography color="textSecondary" align="center">
-          No Rooms for this setting yet
+          No Work orders for this setting yet
         </Typography>
       </div>
     </Paper>
