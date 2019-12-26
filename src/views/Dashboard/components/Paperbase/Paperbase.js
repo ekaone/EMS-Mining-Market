@@ -20,7 +20,6 @@ import {
   tabLabelsAnalytics,
   tabLabelsPerformance,
   tabLabelsTestLab
-  // categories
 } from './data'
 
 
@@ -205,14 +204,11 @@ function Paperbase(props) {
 
   const setContent = (idx) => {
     const c = tabLabels.find(c => c.id === idx ? c.label : null)
-    // const c = labels.find(c => c.id === idx ? c.label : null)
     return c.content
   }
 
-  const handleClickChildren = (childId, id) => {
+  const handleClickChildren = (childId) => {
     const c = categories.find(c => c.catName === childId)
-    const cl = categoriesListItem.find(cli => cli.id === id).children.find(child => child.id === childId)
-    console.log(cl)
     setTabLabels(c.component)
     setIndex(0)
     setTitleHeader(c.catName)
