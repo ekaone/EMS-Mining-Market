@@ -122,7 +122,7 @@ function Navigator(props) {
                 key={childId}
                 button
                 className={clsx(classes.item, active && classes.itemActiveItem)}
-                onClick={() => handlerChildrenClick(childId)}
+                onClick={() => handlerChildrenClick(childId, id)}
               >
                 <ListItemIcon className={classes.itemIcon}>{icon}</ListItemIcon>
                 <ListItemText

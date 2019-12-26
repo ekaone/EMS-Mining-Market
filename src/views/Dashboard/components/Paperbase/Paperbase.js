@@ -209,9 +209,10 @@ function Paperbase(props) {
     return c.content
   }
 
-  const handleClickChildren = (childId) => {
+  const handleClickChildren = (childId, id) => {
     const c = categories.find(c => c.catName === childId)
-    console.log(c.catName)
+    const cl = categoriesListItem.find(cli => cli.id === id).children.find(child => child.id === childId)
+    console.log(cl)
     setTabLabels(c.component)
     setIndex(0)
     setTitleHeader(c.catName)
