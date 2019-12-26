@@ -7,7 +7,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
 
-
 import Navigator from '../Navigator/Navigator';
 import Header from '../Header/Header';
 import { 
@@ -188,6 +187,7 @@ function Paperbase(props) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [index, setIndex] = useState(0)
   const [tabLabels, setTabLabels] = useState(tabLabelsLabour)
+  const [titleHeader, setTitleHeader] = useState('Labour')
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -205,9 +205,10 @@ function Paperbase(props) {
 
   const handleClickChildren = (childId) => {
     const c = categories.find(c => c.id === childId)
-    console.log(c.component)
+    console.log(c.id)
     setTabLabels(c.component)
     setIndex(0)
+    setTitleHeader(c.id)
   }
 
   return (
@@ -235,6 +236,7 @@ function Paperbase(props) {
         </nav>
         <div className={classes.app}>
           <Header 
+            title={titleHeader}
             onDrawerToggle={handleDrawerToggle}
             tabLabels={tabLabels}
             index={index}

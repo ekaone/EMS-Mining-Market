@@ -1,8 +1,7 @@
 import React from 'react';
-
+// component
 import Content from '../Content/Content';
 import Content2 from '../Content/Content2';
-
 // icons
 import PeopleIcon from '@material-ui/icons/People';
 import DnsRoundedIcon from '@material-ui/icons/DnsRounded';
@@ -44,8 +43,8 @@ const tabLabelsLabour = [
 ]
 
 const tabLabelsInspection = [
-  { id: 0, label: 'Inspect 1', content: 'Content 1' },
-  { id: 1, label: 'Inspect 2', content: 'Content 2' },
+  { id: 0, label: 'Inspect 1', content: 'Inspect 1' },
+  { id: 1, label: 'Inspect 2', content: 'Inspect 2' },
 ]
 
 const tabLabelsStorage = [

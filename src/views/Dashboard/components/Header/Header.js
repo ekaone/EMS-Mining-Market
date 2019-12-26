@@ -45,7 +45,7 @@ const styles = theme => ({
 });
 
 function Header(props) {
-  const { classes, onDrawerToggle, handlerClickTab, index, tabLabels } = props;
+  const { classes, onDrawerToggle, handlerClickTab, index, tabLabels, title } = props;
 
   return (
     <React.Fragment>
@@ -96,7 +96,7 @@ function Header(props) {
           <Grid container alignItems="center" spacing={1}>
             <Grid item xs>
               <Typography color="inherit" variant="h5" component="h1">
-                Labour
+                {title}
               </Typography>
             </Grid>
             <Grid item>
