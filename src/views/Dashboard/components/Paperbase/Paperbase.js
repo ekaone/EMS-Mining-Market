@@ -17,6 +17,9 @@ import {
   tabLabelsLocation,
   tabLabelsFunctions,
   tabLabelsVehicle,
+  tabLabelsAnalytics,
+  tabLabelsPerformance,
+  tabLabelsTestLab
   // categories
 } from './data'
 
@@ -174,12 +177,15 @@ const styles = {
 };
 
 const categories = [
-  { id: 'Labour', component: tabLabelsLabour, active: true },
-  { id: 'Inspection', component: tabLabelsInspection, active: true },
-  { id: 'Storage', component: tabLabelsStorage, active: true },
-  { id: 'Location', component: tabLabelsLocation, active: true },
-  { id: 'Functions', component: tabLabelsFunctions, active: true },
-  { id: 'Vehicle', component: tabLabelsVehicle, active: true },
+  { id: 0, catName: 'Labour', component: tabLabelsLabour },
+  { id: 1, catName: 'Inspection', component: tabLabelsInspection },
+  { id: 3, catName: 'Storage', component: tabLabelsStorage },
+  { id: 4, catName: 'Location', component: tabLabelsLocation },
+  { id: 5, catName: 'Functions', component: tabLabelsFunctions },
+  { id: 6, catName: 'Vehicle', component: tabLabelsVehicle },
+  { id: 7, catName: 'Analytics', component: tabLabelsAnalytics },
+  { id: 8, catName: 'Performance', component: tabLabelsPerformance },
+  { id: 9, catName: 'Test Lab', component: tabLabelsTestLab },
 ]
 
 function Paperbase(props) {
@@ -204,11 +210,12 @@ function Paperbase(props) {
   }
 
   const handleClickChildren = (childId) => {
-    const c = categories.find(c => c.id === childId)
-    console.log(c.id)
+    const c = categories.find(c => c.catName === childId)
+    console.log(c.catName)
     setTabLabels(c.component)
     setIndex(0)
-    setTitleHeader(c.id)
+    setTitleHeader(c.catName)
+    setMobileOpen(!mobileOpen)
   }
 
   return (

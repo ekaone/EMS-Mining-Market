@@ -17,7 +17,7 @@ const categoriesListItem = [
   {
     id: 'Task',
     children: [
-      { id: 'Labour', icon: <PeopleIcon /> },
+      { id: 'Labour', icon: <PeopleIcon />, active: true },
       { id: 'Inspection', icon: <DnsRoundedIcon /> },
       { id: 'Storage', icon: <PermMediaOutlinedIcon /> },
       { id: 'Location', icon: <PublicIcon />, },
@@ -38,8 +38,8 @@ const categoriesListItem = [
 const tabLabelsLabour = [
   { id: 0, label: 'Users', content: <Content /> },
   { id: 1, label: 'Work Order', content: <Content2 /> },
-  { id: 2, label: 'Purchase Order', content: <Content2 /> },
-  { id: 3, label: 'Apporval', content: <Content2 /> }
+  { id: 2, label: 'Purchase Order', content: 'Content -- Purchase Order' },
+  { id: 3, label: 'Approval', content: 'Content -- Approval' }
 ]
 
 const tabLabelsInspection = [
@@ -66,6 +66,23 @@ const tabLabelsVehicle = [
   { id: 0, label: 'Vehicle 1', content: 'Vehicle 1' },
   { id: 1, label: 'Vehicle 2', content: 'Vehicle 2' },
 ]
+// ----
+const tabLabelsAnalytics = [
+  { id: 0, label: 'Analytics 1', content: 'Analytics 1' },
+  { id: 1, label: 'Analytics 2', content: 'Analytics 2' },
+]
+
+const tabLabelsPerformance = [
+  { id: 0, label: 'Performance 1', content: 'C Performance 1' },
+  { id: 1, label: 'Performance 2', content: 'C Performance 2' },
+  { id: 2, label: 'Performance 3', content: 'C Performance 3' },
+  { id: 3, label: 'Performance 4', content: 'C Performance 4' },
+]
+
+const tabLabelsTestLab = [
+  { id: 0, label: 'TestLab 1', content: 'TestLab 1' },
+  { id: 1, label: 'TestLab 2', content: 'TestLab 2' },
+]
 
 export { 
   categoriesListItem,
@@ -75,4 +92,7 @@ export {
   tabLabelsLocation,
   tabLabelsFunctions,
   tabLabelsVehicle,
+  tabLabelsAnalytics,
+  tabLabelsPerformance,
+  tabLabelsTestLab
 }
