@@ -17,7 +17,7 @@ const categoriesListItem = [
   {
     id: 'Task',
     children: [
-      { id: 'Labour', icon: <PeopleIcon />, active: true },
+      { id: 'Labour', icon: <PeopleIcon /> },
       { id: 'Inspection', icon: <DnsRoundedIcon /> },
       { id: 'Storage', icon: <PermMediaOutlinedIcon /> },
       { id: 'Location', icon: <PublicIcon />, },

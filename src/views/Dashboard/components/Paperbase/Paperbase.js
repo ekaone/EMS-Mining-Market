@@ -174,12 +174,12 @@ const styles = {
 };
 
 const categories = [
-  { id: 'Labour', component: tabLabelsLabour },
-  { id: 'Inspection', component: tabLabelsInspection },
-  { id: 'Storage', component: tabLabelsStorage },
-  { id: 'Location', component: tabLabelsLocation },
-  { id: 'Functions', component: tabLabelsFunctions },
-  { id: 'Vehicle', component: tabLabelsVehicle },
+  { id: 'Labour', component: tabLabelsLabour, active: true },
+  { id: 'Inspection', component: tabLabelsInspection, active: true },
+  { id: 'Storage', component: tabLabelsStorage, active: true },
+  { id: 'Location', component: tabLabelsLocation, active: true },
+  { id: 'Functions', component: tabLabelsFunctions, active: true },
+  { id: 'Vehicle', component: tabLabelsVehicle, active: true },
 ]
 
 function Paperbase(props) {
