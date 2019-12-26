@@ -165,7 +165,7 @@ const styles = {
   },
 };
 
-const tabLabels = [
+const tabLabelsLabour = [
   { id: 0, label: 'Users', content: <Content /> },
   { id: 1, label: 'Work Order', content: <Content2 /> },
   { id: 2, label: 'Purchase Order', content: <Content2 /> },
@@ -173,21 +173,25 @@ const tabLabels = [
 ]
 
 const tabLabelsInspection = [
-  { id: 0, label: 'Ins 1', content: 'Ins 1 - content' },
-  { id: 1, label: 'Ins 2', content: 'Ins 2 - content' },
+  { id: 0, label: 'Inspect 1', content: 'Content 1' },
+  { id: 1, label: 'Inspect 2', content: 'Content 2' },
 ]
 
+const categories = [
+  { id: 'Labour', component: tabLabelsLabour },
+  { id: 'Inspection', component: tabLabelsInspection },
+]
 
 function Paperbase(props) {
   const { classes } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [index, setIndex] = useState(0)
-  const [labels, setLabels] = useState(
+  const [tabLabels, setTabLabels] = useState([
     { id: 0, label: 'Users', content: <Content /> },
     { id: 1, label: 'Work Order', content: <Content2 /> },
     { id: 2, label: 'Purchase Order', content: <Content2 /> },
     { id: 3, label: 'Apporval', content: <Content2 /> }
-  )
+  ])
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -204,7 +208,10 @@ function Paperbase(props) {
   }
 
   const handleClickChildren = (childId) => {
-    console.log(childId)
+    const c = categories.find(c => c.id === childId)
+    console.log(c.component)
+    setTabLabels(c.component)
+
   }
 
   return (
