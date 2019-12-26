@@ -7,10 +7,19 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
 
+
 import Navigator from '../Navigator/Navigator';
-import Content from '../Content/Content';
-import Content2 from '../Content/Content2';
 import Header from '../Header/Header';
+import { 
+  categoriesListItem,
+  tabLabelsLabour,
+  tabLabelsInspection,
+  tabLabelsStorage,
+  tabLabelsLocation,
+  tabLabelsFunctions,
+  tabLabelsVehicle,
+  // categories
+} from './data'
 
 
 function Copyright() {
@@ -165,33 +174,20 @@ const styles = {
   },
 };
 
-const tabLabelsLabour = [
-  { id: 0, label: 'Users', content: <Content /> },
-  { id: 1, label: 'Work Order', content: <Content2 /> },
-  { id: 2, label: 'Purchase Order', content: <Content2 /> },
-  { id: 3, label: 'Apporval', content: <Content2 /> },
-]
-
-const tabLabelsInspection = [
-  { id: 0, label: 'Inspect 1', content: 'Content 1' },
-  { id: 1, label: 'Inspect 2', content: 'Content 2' },
-]
-
 const categories = [
   { id: 'Labour', component: tabLabelsLabour },
   { id: 'Inspection', component: tabLabelsInspection },
+  { id: 'Storage', component: tabLabelsStorage },
+  { id: 'Location', component: tabLabelsLocation },
+  { id: 'Functions', component: tabLabelsFunctions },
+  { id: 'Vehicle', component: tabLabelsVehicle },
 ]
 
 function Paperbase(props) {
   const { classes } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [index, setIndex] = useState(0)
-  const [tabLabels, setTabLabels] = useState([
-    { id: 0, label: 'Users', content: <Content /> },
-    { id: 1, label: 'Work Order', content: <Content2 /> },
-    { id: 2, label: 'Purchase Order', content: <Content2 /> },
-    { id: 3, label: 'Apporval', content: <Content2 /> }
-  ])
+  const [tabLabels, setTabLabels] = useState(tabLabelsLabour)
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -211,7 +207,7 @@ function Paperbase(props) {
     const c = categories.find(c => c.id === childId)
     console.log(c.component)
     setTabLabels(c.component)
-
+    setIndex(0)
   }
 
   return (
@@ -226,12 +222,14 @@ function Paperbase(props) {
               open={mobileOpen}
               onClose={handleDrawerToggle}
               handlerChildrenClick={handleClickChildren}
+              categories={categoriesListItem}
             />
           </Hidden>
           <Hidden xsDown implementation="css">
             <Navigator 
               PaperProps={{ style: { width: drawerWidth } }} 
               handlerChildrenClick={handleClickChildren}
+              categories={categoriesListItem}
             />
           </Hidden>
         </nav>
