@@ -87,7 +87,7 @@ const tiers = [
     path: '/dashboard/mm'
   },
   {
-    title: 'Pro',
+    title: 'ERP',
     subheader: 'Most popular',
     price: '15',
     description: [
