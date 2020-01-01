@@ -1,4 +1,6 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom'
+
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
@@ -96,6 +98,7 @@ const tiers = [
     ],
     buttonText: 'Get started',
     buttonVariant: 'contained',
+    path: '/dashboard/mm'
   },
   {
     title: 'Enterprise',
@@ -108,6 +111,7 @@ const tiers = [
     ],
     buttonText: 'Contact us',
     buttonVariant: 'outlined',
+    path: '/dashboard/mm'
   },
 ];
 const footers = [
@@ -131,6 +135,11 @@ const footers = [
 
 export default function Landing() {
   const classes = useStyles();
+  const history = useHistory()
+
+  const handleClick = (path) => {
+    history.push(path)
+  }
 
   return (
     <React.Fragment>
@@ -199,7 +208,12 @@ export default function Landing() {
                   </ul>
                 </CardContent>
                 <CardActions>
-                  <Button fullWidth variant={tier.buttonVariant} color="primary">
+                  <Button 
+                    fullWidth 
+                    variant={tier.buttonVariant} 
+                    color="primary"
+                    onClick={() => handleClick(tier.path)}
+                  >
                     {tier.buttonText}
                   </Button>
                 </CardActions>

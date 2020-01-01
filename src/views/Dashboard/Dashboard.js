@@ -11,7 +11,7 @@ export default function Dashboard() {
       <Router basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route exact path="/dashboard" component={Landing} />
-          <Route exact path="/dashboard/mm" component={Paperbase} />
+          <Route path="/dashboard/mm" component={Paperbase} />
         </Switch>
       </Router>
     </>
