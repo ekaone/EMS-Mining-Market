@@ -8,7 +8,8 @@ import {
   SignIn,
   SignUp,
   ForgotPassword,
-  Dashboard
+  Dashboard,
+  DashboardRoute
  } from './views'
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/signup" component={SignUp} />
         <Route path="/forgotpassword" component={ForgotPassword} />
         <Route path="/dashboard" component={Dashboard} />
+        <Route path="/dashboardroute" component={DashboardRoute} />
       </Router>
     </>
   );
