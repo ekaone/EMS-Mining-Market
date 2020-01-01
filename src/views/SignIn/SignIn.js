@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom'
 
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -49,6 +49,25 @@ const useStyles = makeStyles(theme => ({
 
 export default function SignIn() {
   const classes = useStyles();
+  const history = useHistory()
+
+  const [values, setValues] = useState({
+    email: '',
+    password: ''
+  })
+
+  const handleChange = name => e => {
+    setValues({ ...values, [name]: e.target.value })
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    if( values['email'] === 'a' && values['password'] === 'a' ) {
+      history.push('/dashboard')
+    } else {
+      console.log('Wrong..!!')
+    }
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -71,6 +90,7 @@ export default function SignIn() {
             name="email"
             autoComplete="email"
             autoFocus
+            onChange={handleChange('email')}
           />
           <TextField
             variant="outlined"
@@ -82,6 +102,7 @@ export default function SignIn() {
             type="password"
             id="password"
             autoComplete="current-password"
+            onChange={handleChange('password')}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
@@ -93,6 +114,7 @@ export default function SignIn() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={handleSubmit}
           >
             Sign In
           </Button>
