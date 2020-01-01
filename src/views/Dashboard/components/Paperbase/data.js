@@ -1,7 +1,5 @@
 import React from 'react';
-// component
-import Content from '../Content/Content';
-import Content2 from '../Content/Content2';
+
 // icons
 import PeopleIcon from '@material-ui/icons/People';
 import DnsRoundedIcon from '@material-ui/icons/DnsRounded';
@@ -12,6 +10,11 @@ import SettingsInputComponentIcon from '@material-ui/icons/SettingsInputComponen
 import TimerIcon from '@material-ui/icons/Timer';
 import SettingsIcon from '@material-ui/icons/Settings';
 import PhonelinkSetupIcon from '@material-ui/icons/PhonelinkSetup';
+
+// component
+import Content from '../Content/Content';
+import Content2 from '../Content/Content2';
+import Analytic from '../Analytics'
 
 const categoriesListItem = [
   {
@@ -68,7 +71,7 @@ const tabLabelsVehicle = [
 ]
 // ----
 const tabLabelsAnalytics = [
-  { id: 0, label: 'Analytics 1', content: 'Analytics 1' },
+  { id: 0, label: 'Analytics 1', content: <Analytic /> },
   { id: 1, label: 'Analytics 2', content: 'Analytics 2' },
 ]
 
