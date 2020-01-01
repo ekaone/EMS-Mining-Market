@@ -77,11 +77,12 @@ const useStyles = makeStyles(theme => ({
 
 const tiers = [
   {
-    title: 'Free',
+    title: 'Mine Market',
     price: '0',
     description: ['10 users included', '2 GB of storage', 'Help center access', 'Email support'],
     buttonText: 'Sign up for free',
     buttonVariant: 'outlined',
+    path: '/dashboard/mm'
   },
   {
     title: 'Pro',
@@ -128,7 +129,7 @@ const footers = [
   },
 ];
 
-export default function Pricing() {
+export default function Landing() {
   const classes = useStyles();
 
   return (
@@ -137,7 +138,7 @@ export default function Pricing() {
       <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
-            Company name
+            EMS Solutions
           </Typography>
           <nav>
             <Link variant="button" color="textPrimary" href="#" className={classes.link}>
