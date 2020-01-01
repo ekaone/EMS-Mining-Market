@@ -62,7 +62,8 @@ export default function SignUp() {
     firstName: '',
     lastName: '',
     email: '',
-    password: ''
+    password: '',
+    ExtraEmails: false
   })
  
   const handleFaker = (e) => {
@@ -70,8 +71,12 @@ export default function SignUp() {
   }
 
   const handleChange = (e) => {
-    const name = e.target.name
-    setValues({ ...values, [name]: e.target.value })
+    const target = e.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    // const name = e.target.name
+    // setValues({ ...values, [name]: e.target.value })
+    setValues({ ...values, [name]: value })
   }
 
   const handleSubmit = (e) => {
@@ -149,7 +154,14 @@ export default function SignUp() {
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
+                  control={<Checkbox 
+                    value={values.ExtraEmails} 
+                    color="primary" 
+                    name="ExtraEmails" 
+                    onChange={handleChange} 
+                    type="checkbox"
+                    />
+                  }
                   label="I want to receive inspiration, marketing promotions and updates via email."
                 />
               </Grid>

@@ -161,7 +161,7 @@ export default function Landing() {
             </Link>
           </nav>
           <Button href="#" color="primary" variant="outlined" className={classes.link}>
-            Login
+            Logout
           </Button>
         </Toolbar>
       </AppBar>
