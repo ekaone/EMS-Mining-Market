@@ -59,14 +59,14 @@ export default function SignUp() {
   //   password: 'a'
   // }
   const [values, setValues] = useState({
+    ExtraEmails: false,
     firstName: '',
     lastName: '',
     email: '',
-    password: '',
-    ExtraEmails: false
+    password: ''
   })
  
-  const handleFaker = (e) => {
+  const handleFaker = () => {
     setValues(fakeSignUp)
   }
 
@@ -155,7 +155,7 @@ export default function SignUp() {
               <Grid item xs={12}>
                 <FormControlLabel
                   control={<Checkbox 
-                    value={values.ExtraEmails} 
+                    checked={values.ExtraEmails} 
                     color="primary" 
                     name="ExtraEmails" 
                     onChange={handleChange} 
