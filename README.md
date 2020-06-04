@@ -1,6 +1,9 @@
 # Mock-up EMS Mining Market Solution Version 1.0
 Mock-up App. for integrate to existing system
 
+## Status
+🛠 On progress
+
 ## Owner of Application
 This application owned by [PT. Adiraja Integrasi](https://adiraja-integrasi.com/)
 > DO NOT use this application without any permit from PT. Adiraja Integrasi
